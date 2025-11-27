@@ -27,6 +27,8 @@ function sendVerificationEmailMailerSendAPI($to, $verificationCode)
         'text' => "Your verification code is: {$verificationCode}"
     ];
 
+    error_log('[mailersend_api] Sending email via API: from=' . $fromEmail . ' to=' . $to . ' subject=' . $payload['subject']);
+
     $ch = curl_init('https://api.mailersend.com/v1/email');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
@@ -48,9 +50,11 @@ function sendVerificationEmailMailerSendAPI($to, $verificationCode)
     }
 
     if ($code >= 200 && $code < 300) {
+        error_log('[mailersend_api] API send succeeded HTTP ' . $code);
         return true;
     }
 
+    // Log response body for debugging (do not log API key)
     error_log('[mailersend_api] API responded with HTTP ' . $code . ': ' . $resp);
     return false;
 }
