@@ -186,7 +186,7 @@
 
   <!-- Verification Card -->
   <div class="verify-card">
-    <img src="dog.jfif" alt="PetCare Logo" class="logo">
+    <img src="<?= BASE_URL . PUBLIC_DIR . '/dog.jfif' ?>" alt="PetCare Logo" class="logo">
     <h2>Email Verification</h2>
     <p>Please enter the 6-digit code sent to your email to verify your account and continue.</p>
 

@@ -652,7 +652,7 @@ footer {
         <div class="pets-grid">
           <?php foreach ($pets as $pet): ?>
             <div class="pet-card">
-              <img src="<?= !empty($pet['photo']) ? BASE_URL . $pet['photo'] : BASE_URL . 'assets/default-pet.png' ?>" alt="Pet Photo">
+              <img src="<?= !empty($pet['photo']) ? BASE_URL . PUBLIC_DIR . '/' . ltrim($pet['photo'], '/') : BASE_URL . PUBLIC_DIR . '/assets/default-pet.png' ?>" alt="Pet Photo">
               <h4><?= htmlspecialchars($pet['name']) ?></h4>
               <p><strong>Species:</strong> <?= htmlspecialchars($pet['species'] ?? 'N/A') ?></p>
               <p><strong>Breed:</strong> <?= htmlspecialchars($pet['breed']) ?></p>

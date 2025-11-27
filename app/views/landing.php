@@ -580,7 +580,7 @@ footer {
     <a href="#appointments" class="cta-btn">View Appointments</a>
   </div>
   <div class="hero-img">
-    <img src="<?= BASE_URL ?>vet%20cat.jfif.jfif" alt="Vet Illustration">
+    <img src="<?= BASE_URL . PUBLIC_DIR . '/vet%20cat.jfif.jfif' ?>" alt="Vet Illustration">
   </div>
 </section>
 
@@ -589,27 +589,27 @@ footer {
   <div class="carousel-container">
     <div class="carousel-gallery">
       <!-- First set of images -->
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet1.jfif" alt="Pet 1"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet2.jfif" alt="Pet 2"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet3.jfif" alt="Pet 3"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet4.jfif" alt="Pet 4"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet5.jfif" alt="Pet 5"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet6.jfif" alt="Pet 6"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet7.jfif" alt="Pet 7"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet8.jfif" alt="Pet 8"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet9.jfif" alt="Pet 9"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet10.jfif" alt="Pet 10"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet1.jfif' ?>" alt="Pet 1"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet2.jfif' ?>" alt="Pet 2"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet3.jfif' ?>" alt="Pet 3"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet4.jfif' ?>" alt="Pet 4"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet5.jfif' ?>" alt="Pet 5"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet6.jfif' ?>" alt="Pet 6"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet7.jfif' ?>" alt="Pet 7"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet8.jfif' ?>" alt="Pet 8"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet9.jfif' ?>" alt="Pet 9"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet10.jfif' ?>" alt="Pet 10"></div>
       <!-- Duplicate set for seamless loop -->
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet1.jfif" alt="Pet 1"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet2.jfif" alt="Pet 2"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet3.jfif" alt="Pet 3"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet4.jfif" alt="Pet 4"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet5.jfif" alt="Pet 5"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet6.jfif" alt="Pet 6"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet7.jfif" alt="Pet 7"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet8.jfif" alt="Pet 8"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet9.jfif" alt="Pet 9"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet10.jfif" alt="Pet 10"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet1.jfif' ?>" alt="Pet 1"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet2.jfif' ?>" alt="Pet 2"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet3.jfif' ?>" alt="Pet 3"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet4.jfif' ?>" alt="Pet 4"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet5.jfif' ?>" alt="Pet 5"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet6.jfif' ?>" alt="Pet 6"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet7.jfif' ?>" alt="Pet 7"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet8.jfif' ?>" alt="Pet 8"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet9.jfif' ?>" alt="Pet 9"></div>
+      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet10.jfif' ?>" alt="Pet 10"></div>
     </div>
   </div>
 </div>
