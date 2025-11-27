@@ -1,6 +1,4 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-<?php
 /**
  * Central email helper — MailerSend-only implementation.
  * Preference order:
