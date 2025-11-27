@@ -5,6 +5,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
  * LavaLust - an opensource lightweight PHP MVC Framework
  * ------------------------------------------------------------------
  *
+
  * MIT License
  *
  * Copyright (c) 2020 Ronald M. Marasigan
@@ -51,6 +52,10 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | My Configs:
 */
 $config['base_url'] 				= 'http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/';
+
+// Google reCAPTCHA keys (set these here or as environment variables)
+$config['recaptcha_site_key']    = '6LcMZRosAAAAAE1JXXR857oe5oQmKsfpsUrJzZ3P';
+$config['recaptcha_secret_key']  = '6LcMZRosAAAAAGX1gEZB0CtBdNd9xxnU5Cn0cnOn';
 /*
 | -------------------------------------------------------------------
 | LavaLust Version

@@ -636,6 +636,11 @@ footer p {
 </style>
 </head>
 <body>
+<?php
+// Load recaptcha helper and get site key (will use env vars if set)
+require_once __DIR__ . '/../helpers/recaptcha_helper.php';
+$recaptcha_site_key = get_recaptcha_site_key();
+?>
 
 <header>
   <h2>PetCare</h2>
@@ -832,6 +837,9 @@ footer p {
     <input type="text" name="name" placeholder="Name" required><br>
     <input type="email" name="email" placeholder="Email" required><br>
     <input type="password" name="password" placeholder="Password" required><br>
+    <?php if ($recaptcha_site_key): ?>
+      <div style="margin:8px 0;" class="g-recaptcha" data-sitekey="<?= htmlspecialchars($recaptcha_site_key) ?>"></div>
+    <?php endif; ?>
     <button type="submit">Register</button>
   </form>
 </div>
@@ -856,6 +864,9 @@ footer p {
   <form method="POST" action="<?= site_url('login') ?>">
     <input type="email" name="email" placeholder="Email" required><br>
     <input type="password" name="password" placeholder="Password" required><br>
+    <?php if ($recaptcha_site_key): ?>
+      <div style="margin:8px 0;" class="g-recaptcha" data-sitekey="<?= htmlspecialchars($recaptcha_site_key) ?>"></div>
+    <?php endif; ?>
     <button type="submit">Login</button>
   </form>
 </div>
@@ -945,6 +956,10 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
+
+<?php if ($recaptcha_site_key): ?>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<?php endif; ?>
 
 </body>
 </html>

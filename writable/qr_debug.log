@@ -1077,3 +1077,63 @@ QR generated: 2515 bytes
 QR generated: 2478 bytes
 QR generated: 2496 bytes
 QR generated: 2504 bytes
+[2025-11-28 00:29:12] QR requested for ID: 1
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/1
+QR generated (PNG): 2309 bytes
+[2025-11-28 00:29:12] QR requested for ID: 1
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/1
+QR generated (PNG): 2309 bytes
+[2025-11-28 00:32:26] QR requested for ID: 1
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/1
+QR generated (PNG): 2309 bytes
+[2025-11-28 00:32:27] QR requested for ID: 1
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/1
+QR generated (PNG): 2309 bytes
+[2025-11-28 00:34:56] QR requested for ID: 1
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/1
+QR generated (PNG): 2309 bytes
+[2025-11-28 00:34:57] QR requested for ID: 2
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/2
+QR generated (PNG): 2333 bytes
+[2025-11-28 00:34:58] QR requested for ID: 1
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/1
+QR generated (PNG): 2309 bytes
+[2025-11-28 00:34:59] QR requested for ID: 2
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/2
+QR generated (PNG): 2333 bytes
+[2025-11-28 00:35:16] QR requested for ID: 2
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/2
+QR generated (PNG): 2333 bytes
+[2025-11-28 00:35:17] QR requested for ID: 1
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/1
+QR generated (PNG): 2309 bytes
+[2025-11-28 00:35:17] QR requested for ID: 1
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/1
+QR generated (PNG): 2309 bytes
+[2025-11-28 00:35:18] QR requested for ID: 2
+Autoload loaded
+QRCode class exists
+Pet URL: /index.php/pets/view/2
+QR generated (PNG): 2333 bytes

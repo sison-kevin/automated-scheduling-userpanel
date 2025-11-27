@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../models/UserModel.php';
 require_once __DIR__ . '/../helpers/email_helper.php';
+require_once __DIR__ . '/../helpers/recaptcha_helper.php';
 
 
 class AuthController extends Controller
@@ -18,6 +19,15 @@ class AuthController extends Controller
     {
         if (session_status() !== PHP_SESSION_ACTIVE) {
             @session_start();
+        }
+
+        // Verify reCAPTCHA first (if configured)
+        $recaptcha_token = $_POST['g-recaptcha-response'] ?? null;
+        if (!verify_recaptcha($recaptcha_token)) {
+            $_SESSION['error'] = 'reCAPTCHA verification failed. Please try again.';
+            $_SESSION['form_type'] = 'register';
+            header('Location: ' . site_url('/'));
+            exit;
         }
 
         $name  = trim($_POST['name']);
@@ -96,6 +106,15 @@ public function login()
 
     $email = $_POST['email'] ?? null;
     $password = $_POST['password'] ?? null;
+
+    // Verify reCAPTCHA first (if configured)
+    $recaptcha_token = $_POST['g-recaptcha-response'] ?? null;
+    if (!verify_recaptcha($recaptcha_token)) {
+        $_SESSION['error'] = 'reCAPTCHA verification failed. Please try again.';
+        $_SESSION['form_type'] = 'login';
+        header('Location: ' . site_url('/'));
+        exit;
+    }
 
     if (!$email || !$password) {
         $_SESSION['error'] = 'Email and password are required.';
