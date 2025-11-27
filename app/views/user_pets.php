@@ -722,6 +722,35 @@ footer {
   </div>
 </div>
 
+<script>
+// Robust QR loader: fetch QR endpoint as blob and set image src to object URL.
+// This avoids browser onerror replacing the image when the server returns
+// non-image payload or when content-type is not set correctly.
+document.addEventListener('DOMContentLoaded', function () {
+  const qrImgs = Array.from(document.querySelectorAll('img')).filter(i => i.src && i.src.includes('/pets/qr/'));
+  qrImgs.forEach(img => {
+    const url = img.src;
+    // fetch as blob
+    fetch(url, { cache: 'no-store' }).then(resp => {
+      if (!resp.ok) throw new Error('QR fetch failed: ' + resp.status);
+      return resp.blob();
+    }).then(blob => {
+      // create object URL and set as src
+      const objectUrl = URL.createObjectURL(blob);
+      img.src = objectUrl;
+      // revoke after load to free memory
+      img.onload = () => { URL.revokeObjectURL(objectUrl); };
+    }).catch(err => {
+      console.error('QR load failed for', url, err);
+      // keep existing onerror placeholder
+    });
+  });
+});
+</script>
+    </form>
+  </div>
+</div>
+
 <!-- Edit Pet Overlay -->
 <div class="overlay" id="editPetOverlay">
   <div class="form-card">

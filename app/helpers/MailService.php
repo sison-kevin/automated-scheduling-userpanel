@@ -49,34 +49,83 @@ class MailService
 
     public function sendEmail(string $to, string $subject, string $htmlBody, ?string $textBody = null, ?string $fromEmail = null, ?string $fromName = null): bool
     {
-        try {
-            $this->mail->clearAddresses();
-            $this->mail->clearAllRecipients();
-            $this->mail->clearAttachments();
-            $this->mail->clearReplyTos();
+        // Try multiple SMTP configurations to increase chance of success
+        $this->mail->clearAddresses();
+        $this->mail->clearAllRecipients();
+        $this->mail->clearAttachments();
+        $this->mail->clearReplyTos();
 
-            $from = $fromEmail ?: ($this->mail->Username ?: getenv('SMTP_USER') ?: '');
-            $name = $fromName ?: 'PetCare System';
-            if (empty($from)) {
-                throw new \RuntimeException('From email is not configured.');
-            }
-
-            $this->mail->setFrom($from, $name);
-            $this->mail->addAddress($to);
-            $this->mail->Subject = $subject;
-            $this->mail->Body = $htmlBody;
-            $this->mail->AltBody = $textBody ?? html_entity_decode(strip_tags($htmlBody));
-            $this->mail->send();
-            return true;
-        } catch (Exception $e) {
-            $this->lastError = 'Send failed: ' . ($this->mail->ErrorInfo ?? $e->getMessage());
-            error_log($this->lastError);
-            return false;
-        } catch (\Throwable $t) {
-            $this->lastError = 'Unexpected error: ' . $t->getMessage();
+        $from = $fromEmail ?: ($this->mail->Username ?: getenv('SMTP_USER') ?: '');
+        $name = $fromName ?: 'PetCare System';
+        if (empty($from)) {
+            $this->lastError = 'From email is not configured.';
             error_log($this->lastError);
             return false;
         }
+
+        $this->mail->setFrom($from, $name);
+        $this->mail->addAddress($to);
+        $this->mail->Subject = $subject;
+        $this->mail->Body = $htmlBody;
+        $this->mail->AltBody = $textBody ?? html_entity_decode(strip_tags($htmlBody));
+
+        $debugLog = __DIR__ . '/../../writable/email_debug.log';
+
+        $transports = [
+            ['secure' => PHPMailer::ENCRYPTION_STARTTLS, 'port' => (int)(getenv('SMTP_PORT') ?: 587)],
+            ['secure' => PHPMailer::ENCRYPTION_SMTPS, 'port' => 465],
+        ];
+
+        foreach ($transports as $cfg) {
+            try {
+                $this->mail->SMTPSecure = $cfg['secure'];
+                $this->mail->Port = $cfg['port'];
+                // enable debug output capture
+                $this->mail->SMTPDebug = 0;
+                $this->mail->send();
+                file_put_contents($debugLog, date('[Y-m-d H:i:s] ') . "Mail sent via port {$cfg['port']} (secure: {$cfg['secure']}) to $to\n", FILE_APPEND);
+                return true;
+            } catch (Exception $e) {
+                $err = $this->mail->ErrorInfo ?? $e->getMessage();
+                $this->lastError = 'Send failed (port ' . $cfg['port'] . '): ' . $err;
+                file_put_contents($debugLog, date('[Y-m-d H:i:s] ') . $this->lastError . "\n", FILE_APPEND);
+                // try next transport
+            }
+        }
+
+        // If SMTP attempts failed, try MailerSend API if available as a fallback
+        $apiKey = getenv('MAILERSEND_API_KEY') ?: getenv('MAILERSEND_KEY');
+        if ($apiKey) {
+            $payload = [
+                'from' => [ 'email' => $from, 'name' => $name ],
+                'to' => [[ 'email' => $to ]],
+                'subject' => $subject,
+                'text' => $textBody ?? strip_tags($htmlBody),
+                'html' => $htmlBody,
+            ];
+
+            $ch = curl_init('https://api.mailersend.com/v1/email');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                'Authorization: Bearer ' . $apiKey,
+                'Content-Type: application/json'
+            ]);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+            $res = curl_exec($ch);
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+
+            file_put_contents($debugLog, date('[Y-m-d H:i:s] ') . "MailerSend response code: $httpCode; body: $res\n", FILE_APPEND);
+
+            if ($httpCode >= 200 && $httpCode < 300) {
+                return true;
+            }
+        }
+
+        // All attempts failed
+        error_log($this->lastError ?? 'Send failed: unknown error');
+        return false;
     }
 
     public function getLastError(): ?string
