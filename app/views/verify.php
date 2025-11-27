@@ -186,7 +186,7 @@
 
   <!-- Verification Card -->
   <div class="verify-card">
-    <img src="/<?= PUBLIC_DIR ?>/dog.jfif" alt="PetCare Logo" class="logo" onerror="this.onerror=null; this.src='/dog.jfif'">
+    <img src="dog.jfif" alt="PetCare Logo" class="logo">
     <h2>Email Verification</h2>
     <p>Please enter the 6-digit code sent to your email to verify your account and continue.</p>
 
