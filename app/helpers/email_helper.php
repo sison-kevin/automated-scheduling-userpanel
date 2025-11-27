@@ -1,32 +1,17 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-// Try to include Composer's autoloader from a few likely locations.
-$autoloadPaths = [
-    (defined('ROOT_DIR') ? rtrim(ROOT_DIR, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR : __DIR__ . '/../../') . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php',
-    __DIR__ . '/../../vendor/autoload.php',
-    __DIR__ . '/../../../vendor/autoload.php',
-];
-
-$autoloadFound = false;
-foreach ($autoloadPaths as $p) {
-    if (file_exists($p)) {
-        require_once $p;
-        $autoloadFound = true;
-        break;
-    }
-}
-
-if (! $autoloadFound) {
-    error_log('[email_helper] Composer autoload.php not found. Run `composer install` in project root.');
-}
+<?php
+/**
+ * Central email helper — MailerSend-only implementation.
+ * Preference order:
+ * 1. MailerSend HTTP API (MAILERSEND_API_KEY)
+ * 2. MailerSend SMTP helper (MAILERSEND_SMTP_USER / MAILERSEND_SMTP_PASS)
+ * Returns true on success, false on failure and logs details to error_log().
+ */
 
 function sendVerificationEmail($email, $verificationCode)
 {
-
-    // If MailerSend SMTP env is provided prefer the MailerSend SMTP helper
-    // Prefer MailerSend HTTP API (works when SMTP ports are blocked).
+    // 1) HTTP API
     if (getenv('MAILERSEND_API_KEY')) {
         $api = __DIR__ . '/mailersend_api.php';
         if (file_exists($api)) {
@@ -34,67 +19,32 @@ function sendVerificationEmail($email, $verificationCode)
             if (function_exists('sendVerificationEmailMailerSendAPI')) {
                 $ok = sendVerificationEmailMailerSendAPI($email, $verificationCode);
                 if ($ok) return true;
-                error_log('[email_helper] MailerSend API helper failed; falling back to SMTP/PHPMailer.');
+                error_log('[email_helper] MailerSend API helper failed');
+            } else {
+                error_log('[email_helper] sendVerificationEmailMailerSendAPI not found in ' . $api);
             }
         } else {
             error_log('[email_helper] MailerSend API helper not found at ' . $api);
         }
     }
 
-    // Next try MailerSend SMTP helper if configured
+    // 2) SMTP helper
     if (getenv('MAILERSEND_SMTP_USER')) {
         $ms = __DIR__ . '/mailersend_smtp.php';
         if (file_exists($ms)) {
             require_once $ms;
             if (function_exists('sendVerificationEmailMailerSend')) {
                 $ok = sendVerificationEmailMailerSend($email, $verificationCode);
-                if ($ok) {
-                    return true;
-                }
-                error_log('[email_helper] MailerSend SMTP helper failed; falling back to PHPMailer with MailerSend SMTP settings.');
+                if ($ok) return true;
+                error_log('[email_helper] MailerSend SMTP helper failed');
+            } else {
+                error_log('[email_helper] sendVerificationEmailMailerSend not found in ' . $ms);
             }
         } else {
-            error_log('[email_helper] MailerSend helper not found at ' . $ms);
+            error_log('[email_helper] MailerSend SMTP helper not found at ' . $ms);
         }
     }
 
-    // Ensure PHPMailer is available
-    if (! class_exists(PHPMailer::class)) {
-        error_log('[email_helper] PHPMailer class not available. Ensure dependencies are installed.');
-        return false;
-    }
-
-    $mail = new PHPMailer(true);
-
-    try {
-        $mail->isSMTP();
-        // Prefer explicit MailerSend SMTP settings when available, otherwise default to gmail
-        $mail->Host = getenv('MAILERSEND_SMTP_HOST') ?: getenv('EMAIL_SMTP_HOST') ?: 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        // Credentials must be provided via environment variables
-        // Allow both EMAIL_* and MAILERSEND_* credentials
-        $emailUser = getenv('EMAIL_USER') ?: getenv('MAILERSEND_SMTP_USER');
-        $emailPass = getenv('EMAIL_PASS') ?: getenv('MAILERSEND_SMTP_PASS');
-        if (empty($emailUser) || empty($emailPass)) {
-            error_log('[email_helper] SMTP credentials missing. Set EMAIL_USER/EMAIL_PASS or MAILERSEND_SMTP_USER/MAILERSEND_SMTP_PASS.');
-            return false;
-        }
-        $mail->Username = $emailUser;
-        $mail->Password = $emailPass;
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = getenv('MAILERSEND_SMTP_PORT') ?: getenv('EMAIL_SMTP_PORT') ?: 587;
-
-        $from = getenv('EMAIL_FROM') ?: $emailUser;
-        $fromName = getenv('EMAIL_FROM_NAME') ?: 'User Verification';
-        $mail->setFrom($from, $fromName);
-        $mail->addAddress($email);
-        $mail->Subject = 'Your Verification Code';
-        $mail->Body = "Your verification code is: $verificationCode";
-
-        $mail->send();
-        return true;
-    } catch (Exception $e) {
-        error_log('[email_helper] Email failed: ' . ($mail->ErrorInfo ?? $e->getMessage()));
-        return false;
-    }
+    error_log('[email_helper] No MailerSend configuration available (set MAILERSEND_API_KEY or MAILERSEND_SMTP_USER)');
+    return false;
 }
