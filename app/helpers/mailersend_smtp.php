@@ -34,6 +34,19 @@ function smtp_send_command($fp, $cmd)
 
 function sendVerificationEmailMailerSend($to, $verificationCode)
 {
+    // If an API key is available prefer the HTTP API to avoid SMTP port blocks/timeouts
+    $apiKey = getenv('MAILERSEND_API_KEY');
+    if ($apiKey) {
+        $api = __DIR__ . '/mailersend_api.php';
+        if (file_exists($api)) {
+            require_once $api;
+            if (function_exists('sendVerificationEmailMailerSendAPI')) {
+                error_log('[mailersend_smtp] MAILERSEND_API_KEY present — using MailerSend HTTP API instead of SMTP');
+                return sendVerificationEmailMailerSendAPI($to, $verificationCode);
+            }
+        }
+    }
+
     $host = getenv('MAILERSEND_SMTP_HOST') ?: 'smtp.mailersend.net';
     $port = getenv('MAILERSEND_SMTP_PORT') ?: 587;
     $user = getenv('MAILERSEND_SMTP_USER') ?: getenv('EMAIL_USER');
