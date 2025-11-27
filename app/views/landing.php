@@ -323,10 +323,10 @@ section#home {
 }
 
 /* PARALLAX DIVIDER */
-.parallax-divider {
+  .parallax-divider {
   position: relative;
   height: 400px;
-  background-image: url('<?= BASE_URL ?>dog peeking.jfif');
+  background-image: url('/<?= PUBLIC_DIR ?>/dog%20peeking.jfif');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
