@@ -31,8 +31,8 @@ class MailService
             $this->mail->isSMTP();
             $this->mail->Host = getenv('SMTP_HOST') ?: 'smtp.gmail.com';
             $this->mail->SMTPAuth = true;
-            $this->mail->Username = getenv('SMTP_USER') ?: 'kevinsison612@gmail.com';
-            $this->mail->Password = getenv('SMTP_PASS') ?: 'pxvdegxumsffmtcj';
+            $this->mail->Username = getenv('SMTP_USER') ?: '';
+            $this->mail->Password = getenv('SMTP_PASS') ?: '';
             $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $this->mail->Port = (int)(getenv('SMTP_PORT') ?: 587);
             $this->mail->CharSet = 'UTF-8';
