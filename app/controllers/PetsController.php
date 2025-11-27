@@ -348,18 +348,38 @@ public function qr($id)
 
     } catch (\Throwable $e) {
         file_put_contents($logFile, "ERROR: " . $e->getMessage() . "\n" . $e->getTraceAsString() . "\n", FILE_APPEND);
-        
-        // Create a simple error image using GD
-        header('Content-Type: image/png');
-        $im = imagecreatetruecolor(200, 200);
-        $bg = imagecolorallocate($im, 240, 240, 240);
-        $text = imagecolorallocate($im, 100, 100, 100);
-        imagefill($im, 0, 0, $bg);
-        imagestring($im, 3, 50, 90, 'QR Error', $text);
-        $msg = substr($e->getMessage(), 0, 25);
-        imagestring($im, 2, 20, 110, $msg, $text);
-        imagepng($im);
-        imagedestroy($im);
+
+        // Return a friendly error image. Prefer PNG (GD) when available,
+        // otherwise fall back to an inline SVG so environments without GD
+        // still return a valid image payload (avoids fetch/blob failures).
+        $gdAvailable = extension_loaded('gd') || function_exists('imagecreatetruecolor');
+
+        if ($gdAvailable) {
+            header('Content-Type: image/png');
+            http_response_code(500);
+            $im = imagecreatetruecolor(200, 200);
+            $bg = imagecolorallocate($im, 240, 240, 240);
+            $text = imagecolorallocate($im, 100, 100, 100);
+            imagefill($im, 0, 0, $bg);
+            imagestring($im, 3, 50, 90, 'QR Error', $text);
+            $msg = substr($e->getMessage(), 0, 60);
+            imagestring($im, 2, 10, 110, $msg, $text);
+            imagepng($im);
+            imagedestroy($im);
+            exit();
+        }
+
+        // SVG fallback (always safe to output as text and will be blob-fetchable)
+        $svg = '<?xml version="1.0" encoding="UTF-8"?>'
+             . '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">'
+             . '<rect width="100%" height="100%" fill="#f0f0f0"/>'
+             . '<text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" fill="#666" font-family="Arial,Helvetica,sans-serif" font-size="18">QR Error</text>'
+             . '<text x="50%" y="66%" dominant-baseline="middle" text-anchor="middle" fill="#999" font-family="Arial,Helvetica,sans-serif" font-size="10">' . htmlspecialchars(substr($e->getMessage(), 0, 80)) . '</text>'
+             . '</svg>';
+
+        header('Content-Type: image/svg+xml');
+        http_response_code(500);
+        echo $svg;
         exit();
     }
 }
