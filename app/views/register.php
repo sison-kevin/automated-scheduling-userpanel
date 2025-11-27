@@ -439,7 +439,7 @@ section:nth-child(even) {
 .parallax-divider {
   position: relative;
   height: 400px;
-  background-image: url('<?= BASE_URL . PUBLIC_DIR . '/cat%20peeking.jfif' ?>');
+  background-image: url('/<?= PUBLIC_DIR ?>/cat%20peeking.jfif');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -662,7 +662,7 @@ footer p {
     <a href="#services" class="cta-btn">Explore Services</a>
   </div>
     <div class="hero-img">
-    <img src="<?= BASE_URL . PUBLIC_DIR . '/vet%20dog.jfif' ?>" alt="Veterinary Dog">
+    <img src="/<?= PUBLIC_DIR ?>/vet%20dog.jfif" alt="Veterinary Dog" onerror="this.onerror=null; this.src='/vet dog.jfif'">
   </div>
 </section>
 
@@ -671,27 +671,27 @@ footer p {
   <div class="carousel-container">
     <div class="gallery">
       <!-- First set of images -->
-      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet1.jfif' ?>" alt="Pet 1"></div>
-      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet2.jfif' ?>" alt="Pet 2"></div>
-      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet3.jfif' ?>" alt="Pet 3"></div>
-      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet4.jfif' ?>" alt="Pet 4"></div>
-      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet5.jfif' ?>" alt="Pet 5"></div>
-      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet6.jfif' ?>" alt="Pet 6"></div>
-      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet7.jfif' ?>" alt="Pet 7"></div>
-      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet8.jfif' ?>" alt="Pet 8"></div>
-      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet9.jfif' ?>" alt="Pet 9"></div>
-      <div class="pet-card"><img src="<?= BASE_URL . PUBLIC_DIR . '/pet10.jfif' ?>" alt="Pet 10"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet1.jfif" alt="Pet 1" onerror="this.onerror=null; this.src='/pet1.jfif'"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet2.jfif" alt="Pet 2" onerror="this.onerror=null; this.src='/pet2.jfif'"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet3.jfif" alt="Pet 3" onerror="this.onerror=null; this.src='/pet3.jfif'"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet4.jfif" alt="Pet 4" onerror="this.onerror=null; this.src='/pet4.jfif'"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet5.jfif" alt="Pet 5" onerror="this.onerror=null; this.src='/pet5.jfif'"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet6.jfif" alt="Pet 6" onerror="this.onerror=null; this.src='/pet6.jfif'"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet7.jfif" alt="Pet 7" onerror="this.onerror=null; this.src='/pet7.jfif'"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet8.jfif" alt="Pet 8" onerror="this.onerror=null; this.src='/pet8.jfif'"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet9.jfif" alt="Pet 9" onerror="this.onerror=null; this.src='/pet9.jfif'"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet10.jfif" alt="Pet 10" onerror="this.onerror=null; this.src='/pet10.jfif'"></div>
       <!-- Duplicate set for seamless loop -->
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet1.jfif" alt="Pet 1"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet2.jfif" alt="Pet 2"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet3.jfif" alt="Pet 3"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet4.jfif" alt="Pet 4"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet5.jfif" alt="Pet 5"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet6.jfif" alt="Pet 6"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet7.jfif" alt="Pet 7"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet8.jfif" alt="Pet 8"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet9.jfif" alt="Pet 9"></div>
-      <div class="pet-card"><img src="<?= BASE_URL ?>pet10.jfif" alt="Pet 10"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet1.jfif" alt="Pet 1"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet2.jfif" alt="Pet 2"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet3.jfif" alt="Pet 3"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet4.jfif" alt="Pet 4"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet5.jfif" alt="Pet 5"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet6.jfif" alt="Pet 6"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet7.jfif" alt="Pet 7"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet8.jfif" alt="Pet 8"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet9.jfif" alt="Pet 9"></div>
+      <div class="pet-card"><img src="/<?= PUBLIC_DIR ?>/pet10.jfif" alt="Pet 10"></div>
     </div>
   </div>
 </div>
@@ -701,7 +701,7 @@ footer p {
   <h2 class="section-title">About Us</h2>
   <div class="about-container">
     <div class="about-image">
-      <img src="<?= BASE_URL . PUBLIC_DIR . '/vet%20with%20pet.jfif' ?>" alt="Vet with pet">
+      <img src="/<?= PUBLIC_DIR ?>/vet%20with%20pet.jfif" alt="Vet with pet">
     </div>
     <div class="about-text">
       <p>At <strong>PetCare</strong>, we’re passionate about keeping your furry companions happy and healthy. 
@@ -717,17 +717,17 @@ footer p {
   <h2 class="section-title">Why Choose Us?</h2>
   <div class="reasons">
     <div class="reason">
-      <img src="<?= BASE_URL . PUBLIC_DIR . '/expert%20vet.jfif' ?>" alt="Expert Vet">
+      <img src="/<?= PUBLIC_DIR ?>/expert%20vet.jfif" alt="Expert Vet">
       <h3>Expert Veterinarians</h3>
       <p>Certified professionals passionate about animal wellness.</p>
     </div>
     <div class="reason">
-      <img src="<?= BASE_URL . PUBLIC_DIR . '/emergency.jfif' ?>" alt="Emergency">
+      <img src="/<?= PUBLIC_DIR ?>/emergency.jfif" alt="Emergency">
       <h3>24/7 Emergency</h3>
       <p>Round-the-clock emergency service for your peace of mind.</p>
     </div>
     <div class="reason">
-      <img src="<?= BASE_URL . PUBLIC_DIR . '/modern%20facility.jfif' ?>" alt="Facility">
+      <img src="/<?= PUBLIC_DIR ?>/modern%20facility.jfif" alt="Facility">
       <h3>Modern Facilities</h3>
       <p>Advanced equipment for accurate diagnosis and care.</p>
     </div>

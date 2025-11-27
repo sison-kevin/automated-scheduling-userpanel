@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="100%" height="100%" fill="#f7f3ef"/>
+  <g transform="translate(60,40)">
+    <circle cx="80" cy="80" r="60" fill="#ffd9b8" stroke="#ffb47b" stroke-width="4"/>
+    <ellipse cx="80" cy="140" rx="110" ry="50" fill="#fff" stroke="#eee"/>
+    <text x="80" y="85" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="20" fill="#ff914d">Pet</text>
+    <text x="80" y="110" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="12" fill="#bdbdbd">No Photo</text>
+  </g>
+</svg>

@@ -217,9 +217,9 @@
         <div class="pet-card">
             <div class="pet-header">
                 <?php if (!empty($pet['photo'])): ?>
-                    <img src="<?= BASE_URL . PUBLIC_DIR . '/' . ltrim($pet['photo'], '/') ?>" alt="<?= htmlspecialchars($pet['name']) ?>" class="pet-photo">
+                    <img src="/<?= PUBLIC_DIR ?>/<?= ltrim($pet['photo'], '/') ?>" alt="<?= htmlspecialchars($pet['name']) ?>" class="pet-photo" onerror="this.onerror=null; this.src=this.src.replace('/<?= PUBLIC_DIR ?>/','/')">
                 <?php else: ?>
-                    <img src="<?= BASE_URL . PUBLIC_DIR . '/assets/default-pet.png' ?>" alt="Default Pet" class="pet-photo">
+                    <img src="/<?= PUBLIC_DIR ?>/assets/default-pet.svg" alt="Default Pet" class="pet-photo">
                 <?php endif; ?>
                 <h1 class="pet-name"><?= htmlspecialchars($pet['name']) ?></h1>
                 <p class="pet-species"><?= htmlspecialchars($pet['species'] ?? 'Unknown') ?> • <?= htmlspecialchars($pet['breed']) ?></p>
