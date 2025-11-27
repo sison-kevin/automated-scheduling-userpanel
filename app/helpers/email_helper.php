@@ -2,9 +2,33 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+// Try to include Composer's autoloader from a few likely locations.
+$autoloadPaths = [
+    (defined('ROOT_DIR') ? rtrim(ROOT_DIR, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR : __DIR__ . '/../../') . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php',
+    __DIR__ . '/../../vendor/autoload.php',
+    __DIR__ . '/../../../vendor/autoload.php',
+];
+
+$autoloadFound = false;
+foreach ($autoloadPaths as $p) {
+    if (file_exists($p)) {
+        require_once $p;
+        $autoloadFound = true;
+        break;
+    }
+}
+
+if (! $autoloadFound) {
+    error_log('[email_helper] Composer autoload.php not found. Run `composer install` in project root.');
+}
+
 function sendVerificationEmail($email, $verificationCode)
 {
-    require_once __DIR__ . '/../../vendor/autoload.php'; // ✅ Correct path for LavaLust
+    // Ensure PHPMailer is available
+    if (! class_exists(PHPMailer::class)) {
+        error_log('[email_helper] PHPMailer class not available. Ensure dependencies are installed.');
+        return false;
+    }
 
     $mail = new PHPMailer(true);
 
@@ -12,8 +36,9 @@ function sendVerificationEmail($email, $verificationCode)
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'kevinsison612@gmail.com'; // your Gmail
-        $mail->Password = 'qhsi kvov iqxm fvzd';     // your App Password
+        // Credentials: prefer environment variables, fall back to existing values
+        $mail->Username = getenv('EMAIL_USER') ?: 'kevinsison612@gmail.com';
+        $mail->Password = getenv('EMAIL_PASS') ?: 'qhsi kvov iqxm fvzd';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
@@ -25,7 +50,7 @@ function sendVerificationEmail($email, $verificationCode)
         $mail->send();
         return true;
     } catch (Exception $e) {
-        error_log('Email failed: ' . $mail->ErrorInfo);
+        error_log('[email_helper] Email failed: ' . ($mail->ErrorInfo ?? $e->getMessage()));
         return false;
     }
 }
