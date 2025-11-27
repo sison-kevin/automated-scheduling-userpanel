@@ -36,13 +36,21 @@ function sendVerificationEmail($email, $verificationCode)
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        // Credentials: prefer environment variables, fall back to existing values
-        $mail->Username = getenv('EMAIL_USER') ?: 'kevinsison612@gmail.com';
-        $mail->Password = getenv('EMAIL_PASS') ?: 'qhsi kvov iqxm fvzd';
+        // Credentials must be provided via environment variables
+        $emailUser = getenv('EMAIL_USER');
+        $emailPass = getenv('EMAIL_PASS');
+        if (empty($emailUser) || empty($emailPass)) {
+            error_log('[email_helper] SMTP credentials missing. Set EMAIL_USER and EMAIL_PASS environment variables.');
+            return false;
+        }
+        $mail->Username = $emailUser;
+        $mail->Password = $emailPass;
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
-        $mail->setFrom('kevinsison612@gmail.com', 'User Verification');
+        $from = getenv('EMAIL_FROM') ?: $emailUser;
+        $fromName = getenv('EMAIL_FROM_NAME') ?: 'User Verification';
+        $mail->setFrom($from, $fromName);
         $mail->addAddress($email);
         $mail->Subject = 'Your Verification Code';
         $mail->Body = "Your verification code is: $verificationCode";
