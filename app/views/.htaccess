@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # RewriteBase should not include index.php - adjust if your app folder is different
+    RewriteBase /Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/
+
+    # Redirect all requests to index.php (front controller)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /index.php/$1 [L,QSA]
+</IfModule>

@@ -1,0 +1,1079 @@
+[2025-11-04 08:22:06] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+ERROR: ext-gd not loaded
+#0 C:\xampp\htdocs\Userpanel-web_project\Userpanel-web_project\LavaLust-dev-v4\vendor\chillerlan\php-qrcode\src\Output\QRGdImage.php(70): chillerlan\QRCode\Output\QRGdImage->checkGD()
+#1 C:\xampp\htdocs\Userpanel-web_project\Userpanel-web_project\LavaLust-dev-v4\vendor\chillerlan\php-qrcode\src\QRCode.php(310): chillerlan\QRCode\Output\QRGdImage->__construct(Object(chillerlan\QRCode\QROptions), Object(chillerlan\QRCode\Data\QRMatrix))
+#2 C:\xampp\htdocs\Userpanel-web_project\Userpanel-web_project\LavaLust-dev-v4\vendor\chillerlan\php-qrcode\src\QRCode.php(235): chillerlan\QRCode\QRCode->initOutputInterface(Object(chillerlan\QRCode\Data\QRMatrix))
+#3 C:\xampp\htdocs\Userpanel-web_project\Userpanel-web_project\LavaLust-dev-v4\vendor\chillerlan\php-qrcode\src\QRCode.php(226): chillerlan\QRCode\QRCode->renderMatrix(Object(chillerlan\QRCode\Data\QRMatrix), NULL)
+#4 C:\xampp\htdocs\Userpanel-web_project\Userpanel-web_project\LavaLust-dev-v4\app\controllers\PetsController.php(229): chillerlan\QRCode\QRCode->render('http://localhos...')
+#5 C:\xampp\htdocs\Userpanel-web_project\Userpanel-web_project\LavaLust-dev-v4\scheme\kernel\Router.php(318): PetsController->qr('8')
+#6 C:\xampp\htdocs\Userpanel-web_project\Userpanel-web_project\LavaLust-dev-v4\scheme\kernel\Router.php(356): Router->execute_callback('/pets/qr/8', Array)
+#7 C:\xampp\htdocs\Userpanel-web_project\Userpanel-web_project\LavaLust-dev-v4\scheme\kernel\LavaLust.php(161): Router->initiate('/pets/qr/8', 'GET')
+#8 C:\xampp\htdocs\Userpanel-web_project\Userpanel-web_project\LavaLust-dev-v4\index.php(94): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+[2025-11-04 08:26:08] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+[2025-11-04 08:26:08] QR requested for ID: 9
+Autoload loaded
+QRCode class exists
+[2025-11-04 08:26:08] QR requested for ID: 10
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+QR generated: 2496 bytes
+QR generated: 2489 bytes
+QR generated: 2498 bytes
+[2025-11-04 08:26:56] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+[2025-11-04 08:26:56] QR requested for ID: 9
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+[2025-11-04 08:26:56] QR requested for ID: 11
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+[2025-11-04 08:26:56] QR requested for ID: 10
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+QR generated: 2489 bytes
+QR generated: 2496 bytes
+QR generated: 2499 bytes
+QR generated: 2498 bytes
+[2025-11-04 08:27:07] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+[2025-11-04 08:27:07] QR requested for ID: 11
+[2025-11-04 08:27:07] QR requested for ID: 9
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+[2025-11-04 08:27:07] QR requested for ID: 10
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+QR generated: 2499 bytes
+QR generated: 2489 bytes
+QR generated: 2498 bytes
+QR generated: 2496 bytes
+[2025-11-04 08:27:37] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+[2025-11-04 08:27:37] QR requested for ID: 11
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+Autoload loaded
+[2025-11-04 08:27:37] QR requested for ID: 9
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+[2025-11-04 08:27:37] QR requested for ID: 10
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+QR generated: 2496 bytes
+QR generated: 2499 bytes
+QR generated: 2489 bytes
+QR generated: 2498 bytes
+[2025-11-04 08:29:04] QR requested for ID: 8
+Autoload loaded
+[2025-11-04 08:29:04] QR requested for ID: 11
+[2025-11-04 08:29:04] QR requested for ID: 9
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+[2025-11-04 08:29:04] QR requested for ID: 10
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+QR generated: 2489 bytes
+QR generated: 2499 bytes
+QR generated: 2496 bytes
+QR generated: 2498 bytes
+[2025-11-04 08:34:35] QR requested for ID: 9
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+[2025-11-04 08:34:35] QR requested for ID: 11
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+[2025-11-04 08:34:35] QR requested for ID: 10
+[2025-11-04 08:34:35] QR requested for ID: 8
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+QR generated: 2519 bytes
+QR generated: 2492 bytes
+QR generated: 2516 bytes
+QR generated: 2524 bytes
+[2025-11-04 08:36:45] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+QR generated: 2524 bytes
+[2025-11-04 08:36:46] QR requested for ID: 10
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+[2025-11-04 08:36:46] QR requested for ID: 9
+
+Autoload loaded
+Autoload loaded
+QRCode class exists
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+QR generated: 2516 bytes
+QR generated: 2519 bytes
+QR generated: 2492 bytes
+[2025-11-04 09:09:28] QR requested for ID: 10
+[2025-11-04 09:09:28] QR requested for ID: 11
+[2025-11-04 09:09:28] QR requested for ID: 8
+[2025-11-04 09:09:28] QR requested for ID: 9
+Autoload loaded
+Autoload loaded
+Autoload loaded
+QRCode class exists
+QRCode class exists
+QRCode class exists
+QRCode class exists
+168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+QR generated: 2519 bytes
+QR generated: 2492 bytes
+QR generated: 2524 bytes
+QR generated: 2516 bytes
+[2025-11-04 09:29:43] QR requested for ID: 8
+[2025-11-04 09:29:43] QR requested for ID: 10
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+QRCode class exists
+[2025-11-04 09:29:43] QR requested for ID: 9
+[2025-11-04 09:29:43] QR requested for ID: 11
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+QR generated: 2516 bytes
+QR generated: 2492 bytes
+QR generated: 2519 bytes
+QR generated: 2524 bytes
+[2025-11-04 09:29:58] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+[2025-11-04 09:29:58] QR requested for ID: 10
+[2025-11-04 09:29:58] QR requested for ID: 11
+Autoload loaded
+Autoload loaded
+QRCode class exists
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+[2025-11-04 09:29:58] QR requested for ID: 9
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+QR generated: 2516 bytes
+QR generated: 2492 bytes
+QR generated: 2524 bytes
+QR generated: 2519 bytes
+[2025-11-04 09:30:12] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+[2025-11-04 09:30:12] QR requested for ID: 10
+[2025-11-04 09:30:12] QR requested for ID: 11
+Autoload loaded
+Autoload loaded
+[2025-11-04 09:30:12] QR requested for ID: 9
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+QR generated: 2516 bytes
+QR generated: 2492 bytes
+QR generated: 2519 bytes
+[2025-11-04 11:22:36] QR requested for ID: 9
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+[2025-11-04 11:22:36] QR requested for ID: 8
+[2025-11-04 11:22:36] QR requested for ID: 10
+Autoload loaded
+[2025-11-04 11:22:36] QR requested for ID: 11
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.5/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+QR generated: 2524 bytes
+QR generated: 2519 bytes
+QR generated: 2492 bytes
+QR generated: 2516 bytes
+[2025-11-04 11:59:11] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+[2025-11-04 11:59:11] QR requested for ID: 10
+Autoload loaded
+[2025-11-04 11:59:11] QR requested for ID: 11
+QRCode class exists
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+Autoload loaded
+[2025-11-04 11:59:11] QR requested for ID: 9
+QRCode class exists
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+QR generated: 2474 bytes
+QR generated: 2492 bytes
+QR generated: 2502 bytes
+QR generated: 2496 bytes
+[2025-11-04 14:58:59] QR requested for ID: 11
+[2025-11-04 14:58:59] QR requested for ID: 8
+[2025-11-04 14:58:59] QR requested for ID: 10
+Autoload loaded
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+QRCode class exists
+QRCode class exists
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+[2025-11-04 14:58:59] QR requested for ID: 9
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+QR generated: 2492 bytes
+QR generated: 2502 bytes
+QR generated: 2474 bytes
+QR generated: 2496 bytes
+[2025-11-04 14:59:06] QR requested for ID: 10
+Autoload loaded
+Autoload loaded
+[2025-11-04 14:59:06] QR requested for ID: 9
+QRCode class exists
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/10
+QRCode class exists
+[2025-11-04 14:59:06] QR requested for ID: 8
+Autoload loaded
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/11
+QRCode class exists
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/9
+QRCode class exists
+Pet URL: http://192.168.1.12/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+QR generated: 2492 bytes
+QR generated: 2502 bytes
+QR generated: 2474 bytes
+QR generated: 2496 bytes
+[2025-11-05 02:58:45] QR requested for ID: 12
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.0.66/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/12
+QR generated: 2481 bytes
+[2025-11-05 03:02:10] QR requested for ID: 12
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.0.66/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/12
+QR generated: 2481 bytes
+[2025-11-05 03:07:32] QR requested for ID: 13
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.0.66/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/13
+QR generated: 2493 bytes
+[2025-11-11 15:04:43] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-11 15:04:43] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-11 15:04:43] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+[2025-11-11 15:04:43] QR requested for ID: 5
+[2025-11-11 15:04:43] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+QR generated: 2480 bytes
+QR generated: 2509 bytes
+QR generated: 2499 bytes
+QR generated: 2497 bytes
+QR generated: 2502 bytes
+[2025-11-11 15:05:05] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-11 15:05:05] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+[2025-11-11 15:05:05] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-11 15:05:05] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-11 15:05:06] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+QR generated: 2480 bytes
+QR generated: 2499 bytes
+QR generated: 2497 bytes
+QR generated: 2509 bytes
+QR generated: 2502 bytes
+[2025-11-11 15:12:09] QR requested for ID: 3
+[2025-11-11 15:12:09] QR requested for ID: 6
+Autoload loaded
+[2025-11-11 15:12:09] QR requested for ID: 4
+Autoload loaded
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-11 15:12:09] QR requested for ID: 5
+Autoload loaded
+[2025-11-11 15:12:09] QR requested for ID: 7
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.16/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2480 bytes
+QR generated: 2502 bytes
+QR generated: 2497 bytes
+QR generated: 2499 bytes
+QR generated: 2509 bytes
+[2025-11-14 05:34:05] QR requested for ID: 3
+Autoload loaded
+[2025-11-14 05:34:05] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-14 05:34:05] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+[2025-11-14 05:34:05] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-14 05:34:05] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+QR generated: 2496 bytes
+QR generated: 2523 bytes
+QR generated: 2511 bytes
+QR generated: 2497 bytes
+QR generated: 2518 bytes
+[2025-11-14 06:06:11] QR requested for ID: 6
+[2025-11-14 06:06:11] QR requested for ID: 3
+Autoload loaded
+[2025-11-14 06:06:11] QR requested for ID: 5
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+Autoload loaded
+Autoload loaded
+QRCode class exists
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-14 06:06:11] QR requested for ID: 7
+[2025-11-14 06:06:11] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+QR generated: 2518 bytes
+QR generated: 2523 bytes
+QR generated: 2497 bytes
+QR generated: 2496 bytes
+QR generated: 2511 bytes
+[2025-11-14 06:06:54] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-14 06:06:54] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-14 06:06:54] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-14 06:06:54] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-14 06:06:54] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2497 bytes
+QR generated: 2511 bytes
+QR generated: 2518 bytes
+QR generated: 2523 bytes
+QR generated: 2496 bytes
+[2025-11-16 03:26:03] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+QR generated: 2496 bytes
+[2025-11-16 04:06:01] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:06:01] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:06:01] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 04:06:01] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+[2025-11-16 04:06:01] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+QR generated: 2511 bytes
+QR generated: 2518 bytes
+QR generated: 2523 bytes
+QR generated: 2496 bytes
+QR generated: 2497 bytes
+[2025-11-16 04:06:28] QR requested for ID: 4
+[2025-11-16 04:06:28] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+Autoload loaded
+[2025-11-16 04:06:28] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QRCode class exists
+[2025-11-16 04:06:28] QR requested for ID: 6
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+QR generated: 2523 bytes
+QR generated: 2496 bytes
+QR generated: 2518 bytes
+QR generated: 2511 bytes
+QR generated: 2497 bytes
+[2025-11-16 04:13:39] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:13:39] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 04:13:39] QR requested for ID: 7
+[2025-11-16 04:13:39] QR requested for ID: 3
+[2025-11-16 04:13:39] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Autoload loaded
+Autoload loaded
+11 bytes
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+QR generated: 2497 bytes
+QR generated: 2518 bytes
+QR generated: 2496 bytes
+QR generated: 2523 bytes
+[2025-11-16 04:13:54] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:13:54] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:13:54] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 04:13:54] QR requested for ID: 7
+[2025-11-16 04:13:54] QR requested for ID: 6
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2511 bytes
+QR generated: 2523 bytes
+QR generated: 2497 bytes
+QR generated: 2496 bytes
+QR generated: 2518 bytes
+[2025-11-16 04:14:13] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:14:13] QR requested for ID: 6
+[2025-11-16 04:14:13] QR requested for ID: 4
+[2025-11-16 04:14:13] QR requested for ID: 7
+Autoload loaded
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://locaPet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+[2025-11-16 04:14:14] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+QR generated: 2523 bytes
+QR generated: 2518 bytes
+QR generated: 2496 bytes
+QR generated: 2511 bytes
+QR generated: 2497 bytes
+[2025-11-16 04:20:04] QR requested for ID: 4
+[2025-11-16 04:20:04] QR requested for ID: 3
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:20:04] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 04:20:04] QR requested for ID: 7
+[2025-11-16 04:20:04] QR requested for ID: 6
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2523 bytes
+QR generated: 2511 bytes
+QR generated: 2497 bytes
+QR generated: 2496 bytes
+QR generated: 2518 bytes
+[2025-11-16 04:20:17] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:20:17] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:20:17] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 04:20:17] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+[2025-11-16 04:20:17] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+QR generated: 2523 bytes
+QR generated: 2496 bytes
+QR generated: 2511 bytes
+QR generated: 2497 bytes
+[2025-11-16 04:20:44] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:20:44] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 04:20:44] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2523 bytes
+[2025-11-16 04:20:44] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 04:20:44] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+QR generated: 2518 bytes
+QR generated: 2496 bytes
+QR generated: 2497 bytes
+QR generated: 2511 bytes
+[2025-11-16 04:22:06] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:22:06] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+QR generated: 2497 bytes
+[2025-11-16 04:22:06] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Autoload loaded
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+QR generated: 2523 bytes
+QR generated: 2496 bytes
+QR generated: 2518 bytes
+QR generated: 2511 bytes
+[2025-11-16 04:22:17] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:22:17] QR requested for ID: 4
+[2025-11-16 04:22:17] QR requested for ID: 7
+[2025-11-16 04:22:17] QR requested for ID: 5
+Autoload loaded
+[2025-11-16 04:22:17] QR requested for ID: 6
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+QRCode class exists
+QR generated: 2523 bytes
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2518 bytes
+QR generated: 2497 bytes
+QR generated: 2511 bytes
+QR generated: 2496 bytes
+[2025-11-16 04:22:29] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:22:29] QR requested for ID: 4
+[2025-11-16 04:22:29] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Autoload loaded
+[2025-11-16 04:22:29] QR requested for ID: 5
+ct/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 04:22:29] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2523 bytes
+QR generated: 2496 bytes
+QR generated: 2497 bytes
+QR generated: 2511 bytes
+QR generated: 2518 bytes
+[2025-11-16 04:22:48] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+QR generated: 2523 bytes
+[2025-11-16 04:22:49] QR requested for ID: 4
+[2025-11-16 04:22:49] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+[2025-11-16 04:22:49] QR requested for ID: 7
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2497 bytes
+QR generated: 2511 bytes
+QR generated: 2518 bytes
+QR generated: 2496 bytes
+[2025-11-16 04:23:16] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:23:16] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 04:23:16] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:23:16] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 04:23:16] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2523 bytes
+QR generated: 2497 bytes
+QR generated: 2496 bytes
+QR generated: 2511 bytes
+QR generated: 2518 bytes
+[2025-11-16 04:23:36] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:23:36] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 04:23:36] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:23:36] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 04:23:36] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2523 bytes
+QR generated: 2497 bytes
+QR generated: 2511 bytes
+QR generated: 2518 bytes
+QR generated: 2496 bytes
+[2025-11-16 04:23:43] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:23:43] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:23:43] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 04:23:44] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 04:23:44] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2511 bytes
+QR generated: 2523 bytes
+QR generated: 2518 bytes
+QR generated: 2497 bytes
+QR generated: 2496 bytes
+[2025-11-16 04:24:09] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:24:09] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:24:10] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2523 bytes
+[2025-11-16 04:24:10] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 04:24:10] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+QR generated: 2511 bytes
+QR generated: 2496 bytes
+QR generated: 2518 bytes
+QR generated: 2497 bytes
+[2025-11-16 04:24:18] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:24:18] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:24:18] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+QR generated: 2523 bytes
+QR generated: 2511 bytes
+[2025-11-16 04:24:18] QR requested for ID: 6
+[2025-11-16 04:24:18] QR requested for ID: 7
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2497 bytes
+QR generated: 2518 bytes
+QR generated: 2496 bytes
+[2025-11-16 04:24:26] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:24:26] QR requested for ID: 7
+[2025-11-16 04:24:26] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+[2025-11-16 04:24:26] QR requested for ID: 6
+[2025-11-16 04:24:26] QR requested for ID: 5
+Autoload loaded
+Autoload loaded
+QRCode class exists
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+Autoload loaded
+QRCode class exists
+Pet URL: http://localhost/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+QR generated: 2511 bytes
+QR generated: 2496 bytes
+QR generated: 2497 bytes
+QR generated: 2518 bytes
+QR generated: 2523 bytes
+[2025-11-16 04:31:48] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:31:49] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:31:49] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 04:31:49] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+QR generated: 2498 bytes
+QR generated: 2515 bytes
+QR generated: 2504 bytes
+QR generated: 2496 bytes
+[2025-11-16 04:31:49] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2478 bytes
+[2025-11-16 04:40:51] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 04:40:51] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 04:40:51] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 04:40:51] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 04:40:51] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2504 bytes
+QR generated: 2498 bytes
+QR generated: 2496 bytes
+QR generated: 2478 bytes
+QR generated: 2515 bytes
+[2025-11-16 05:39:36] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+QR generated: 2506 bytes
+[2025-11-16 05:41:52] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+QR generated: 2506 bytes
+[2025-11-16 05:41:54] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+QR generated: 2506 bytes
+[2025-11-16 05:41:58] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+QR generated: 2506 bytes
+[2025-11-16 05:44:08] QR requested for ID: 8
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/8
+QR generated: 2506 bytes
+[2025-11-16 06:47:48] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 06:47:48] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 06:47:48] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 06:47:48] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 06:47:48] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2504 bytes
+QR generated: 2498 bytes
+QR generated: 2515 bytes
+QR generated: 2496 bytes
+QR generated: 2478 bytes
+[2025-11-16 06:48:24] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 06:48:24] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+[2025-11-16 06:48:24] QR requested for ID: 6
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 06:48:24] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+[2025-11-16 06:48:24] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+QR generated: 2515 bytes
+QR generated: 2498 bytes
+QR generated: 2504 bytes
+QR generated: 2496 bytes
+[2025-11-16 06:51:52] QR requested for ID: 4
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+QR generated: 2504 bytes
+[2025-11-16 06:51:52] QR requested for ID: 6
+[2025-11-16 06:51:52] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Autoload loaded
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+[2025-11-16 06:51:52] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+QR generated: 2515 bytes
+QR generated: 2478 bytes
+[2025-11-16 06:51:52] QR requested for ID: 3
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+QR generated: 2496 bytes
+QR generated: 2498 bytes
+[2025-11-16 13:50:22] QR requested for ID: 4
+[2025-11-16 13:50:22] QR requested for ID: 3
+Autoload loaded
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/3
+[2025-11-16 13:50:22] QR requested for ID: 6
+QRCode class exists
+Autoload loaded
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/4
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/6
+[2025-11-16 13:50:22] QR requested for ID: 5
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/5
+[2025-11-16 13:50:22] QR requested for ID: 7
+Autoload loaded
+QRCode class exists
+Pet URL: http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/index.php/pets/view/7
+QR generated: 2498 bytes
+QR generated: 2515 bytes
+QR generated: 2478 bytes
+QR generated: 2496 bytes
+QR generated: 2504 bytes

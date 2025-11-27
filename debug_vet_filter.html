@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Debug Vet Filtering</title>
+</head>
+<body>
+<h2>Debug: Veterinarian Filtering</h2>
+
+<p><strong>Simulating Userpanel Appointments Form</strong></p>
+
+<label>Service:</label>
+<select id="service">
+  <option value="">-- Choose service --</option>
+  <option value="10" data-specialization="Grooming & Wellness">Grooming & Wellness - ₱300.00</option>
+</select>
+
+<br><br>
+
+<label>Veterinarian:</label>
+<select id="veterinarian_id" disabled>
+  <option value="">-- Select a service first --</option>
+</select>
+
+<br><br>
+
+<div id="debug" style="background: #f0f0f0; padding: 15px; margin-top: 20px; font-family: monospace; white-space: pre-wrap;"></div>
+
+<script>
+const serviceInput = document.getElementById('service');
+const vetInput = document.getElementById('veterinarian_id');
+const debugDiv = document.getElementById('debug');
+
+function log(msg) {
+  debugDiv.textContent += msg + '\n';
+  console.log(msg);
+}
+
+log('Page loaded');
+log('');
+
+// Simulating the PHP foreach loop that generates JavaScript
+const vetsData = [
+  {id: 1, name: 'Dr. Maria Santos', spec: 'Small Animal Care'},
+  {id: 2, name: 'Dr. Juan dela Cruz', spec: 'Large Animal Care'},
+  {id: 3, name: 'Dr. Sofia Reyes', spec: 'Exotic Animal Care'},
+  {id: 5, name: 'Dr. Carlos Martinez', spec: 'General Surgery'},
+  {id: 6, name: 'Dr. Ana Lim', spec: 'Dental Care'},
+  {id: 7, name: 'Dr. Miguel Torres', spec: 'Emergency Care'},
+  {id: 8, name: 'Dr. Elena Garcia', spec: 'Laboratory Services'},
+  {id: 9, name: 'Dr. Roberto Cruz', spec: 'Small Animal Care'},
+  {id: 10, name: 'Dr. Patricia Mendoza', spec: 'Grooming & Wellness'}
+];
+
+log('Loaded ' + vetsData.length + ' veterinarians');
+log('');
+
+serviceInput.addEventListener('change', function() {
+  log('--- Service changed ---');
+  const selectedService = serviceInput.options[serviceInput.selectedIndex];
+  const serviceSpecialization = selectedService ? selectedService.dataset.specialization : '';
+  
+  log('Selected service: ' + serviceSpecialization);
+  
+  vetInput.value = '';
+  
+  if (!serviceSpecialization) {
+    vetInput.disabled = true;
+    vetInput.innerHTML = '<option value="">-- Select a service first --</option>';
+    log('No service selected, disabled vet dropdown');
+    return;
+  }
+  
+  let newOptions = '<option value="">-- Choose veterinarian --</option>';
+  let matchCount = 0;
+  
+  log('Checking matches:');
+  vetsData.forEach(vet => {
+    const matches = vet.spec === serviceSpecialization;
+    log('  ' + vet.name + ' (' + vet.spec + ') - Match: ' + matches);
+    if (matches) {
+      newOptions += '<option value="' + vet.id + '">' + vet.name + ' (' + vet.spec + ')</option>';
+      matchCount++;
+    }
+  });
+  
+  log('');
+  log('Total matches: ' + matchCount);
+  
+  if (matchCount === 0) {
+    vetInput.innerHTML = '<option value="">-- No veterinarians available for this service --</option>';
+    vetInput.disabled = true;
+    log('No matches found, disabled dropdown');
+  } else {
+    vetInput.innerHTML = newOptions;
+    vetInput.disabled = false;
+    log('Enabled dropdown with ' + matchCount + ' veterinarian(s)');
+  }
+});
+
+log('Setting up initial state...');
+serviceInput.dispatchEvent(new Event('change'));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+        # Allow PATH_INFO to be passed to PHP scripts
+        AcceptPathInfo On
+    # Use the base path from your config (adjust if your project is in a different folder)
+    RewriteBase /Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/
+
+    # Prevent direct access to certain directories
+    RewriteRule ^(app|scheme|vendor|runtime)($|/) - [L,NC]
+
+    # If the request is for an existing file or directory, serve it directly
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Otherwise forward the request to index.php (front controller)
+    RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+</IfModule>
