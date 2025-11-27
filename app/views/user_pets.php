@@ -672,12 +672,21 @@ footer {
                   data-medical_history="<?= htmlspecialchars($pet['medical_history'] ?? '') ?>">Edit</a>
                 <a href="<?= site_url('pets/delete/' . $pet['id']) ?>" class="delete" onclick="return confirm('Delete this pet?');">Delete</a>
                 <div style="margin-top:12px;">
-                  <?php $qrUrl = site_url('pets/qr/' . $pet['id']); ?>
-                  <img src="<?= $qrUrl ?>" alt="QR Code" width="100" height="100" style="border:1px solid #ccc;border-radius:6px;" onerror="console.error('QR Load Failed:', this.src); this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22%3EQR Error%3C/text%3E%3C/svg%3E';">
-                  <br>
-                  <small style="color:#666;font-size:0.7rem;">Pet ID: <?= $pet['id'] ?></small><br>
-                  <small style="color:#999;font-size:0.65rem;word-break:break-all;"><?= htmlspecialchars($qrUrl) ?></small><br>
-                  <a href="<?= site_url('pets/download-qr/' . $pet['id']) ?>" class="btn" style="margin-top:5px;padding:5px 10px;font-size:0.8rem;">Download QR</a>
+                  <?php $petId = intval($pet['id']); ?>
+                  <?php if ($petId > 0):
+                      $qrUrl = site_url('pets/qr/' . $petId);
+                  ?>
+                    <img src="<?= $qrUrl ?>" alt="QR Code" width="100" height="100" style="border:1px solid #ccc;border-radius:6px;" onerror="console.error('QR Load Failed:', this.src); this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22%3EQR Error%3C/text%3E%3C/svg%3E';">
+                    <br>
+                    <small style="color:#666;font-size:0.7rem;">Pet ID: <?= $petId ?></small><br>
+                    <small style="color:#999;font-size:0.65rem;word-break:break-all;"><?= htmlspecialchars($qrUrl) ?></small><br>
+                    <a href="<?= site_url('pets/download-qr/' . $petId) ?>" class="btn" style="margin-top:5px;padding:5px 10px;font-size:0.8rem;">Download QR</a>
+                  <?php else: ?>
+                    <div style="background:#fff7f0;padding:8px;border-radius:6px;border-left:4px solid #ff914d;">
+                      <strong style="color:#b3501a;">QR unavailable</strong><br>
+                      <small style="color:#666">Invalid pet ID (<?= htmlspecialchars($pet['id']) ?>). Edit the pet to regenerate a proper ID or fix the database auto-increment.</small>
+                    </div>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>
