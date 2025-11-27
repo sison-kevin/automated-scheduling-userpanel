@@ -81,7 +81,7 @@ $config['ENVIRONMENT']             = 'development';
 */
 // For local network access (phone scanning QR codes), use your computer's IP address
 // Detected active Wi-Fi IPv4: 192.168.1.16
-$config['base_url'] 			= 'http://192.168.1.14/Userpanel-web_project/Userpanel-web_project/LavaLust-dev-v4/';
+$config['base_url'] 			= '';
 
 /*
 |--------------------------------------------------------------------------
