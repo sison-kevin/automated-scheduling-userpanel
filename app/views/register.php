@@ -439,7 +439,7 @@ section:nth-child(even) {
 .parallax-divider {
   position: relative;
   height: 400px;
-   background-image: url('/<?= PUBLIC_DIR ?>/dog%20peeking.jfif');
+  background-image: url('/<?= PUBLIC_DIR ?>/cat%20peeking.jfif');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -662,7 +662,7 @@ footer p {
     <a href="#services" class="cta-btn">Explore Services</a>
   </div>
     <div class="hero-img">
-    <img src="/<?= site_url ?>/vet%20dog.jfif" alt="Veterinary Dog" onerror="this.onerror=null; this.src='/vet dog.jfif'">
+    <img src="/<?= PUBLIC_DIR ?>/vet%20dog.jfif" alt="Veterinary Dog" onerror="this.onerror=null; this.src='/vet dog.jfif'">
   </div>
 </section>
 
