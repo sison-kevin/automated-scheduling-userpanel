@@ -26,6 +26,22 @@ function sendVerificationEmail($email, $verificationCode)
 {
 
     // If MailerSend SMTP env is provided prefer the MailerSend SMTP helper
+    // Prefer MailerSend HTTP API (works when SMTP ports are blocked).
+    if (getenv('MAILERSEND_API_KEY')) {
+        $api = __DIR__ . '/mailersend_api.php';
+        if (file_exists($api)) {
+            require_once $api;
+            if (function_exists('sendVerificationEmailMailerSendAPI')) {
+                $ok = sendVerificationEmailMailerSendAPI($email, $verificationCode);
+                if ($ok) return true;
+                error_log('[email_helper] MailerSend API helper failed; falling back to SMTP/PHPMailer.');
+            }
+        } else {
+            error_log('[email_helper] MailerSend API helper not found at ' . $api);
+        }
+    }
+
+    // Next try MailerSend SMTP helper if configured
     if (getenv('MAILERSEND_SMTP_USER')) {
         $ms = __DIR__ . '/mailersend_smtp.php';
         if (file_exists($ms)) {
@@ -35,13 +51,11 @@ function sendVerificationEmail($email, $verificationCode)
                 if ($ok) {
                     return true;
                 }
-                // Log and fall back to PHPMailer using the same MailerSend SMTP settings
                 error_log('[email_helper] MailerSend SMTP helper failed; falling back to PHPMailer with MailerSend SMTP settings.');
             }
         } else {
             error_log('[email_helper] MailerSend helper not found at ' . $ms);
         }
-        // If helper not available or failed, continue to PHPMailer path below
     }
 
     // Ensure PHPMailer is available
