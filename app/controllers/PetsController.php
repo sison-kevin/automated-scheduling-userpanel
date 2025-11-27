@@ -301,27 +301,49 @@ public function qr($id)
         $petUrl = site_url("pets/view/" . intval($id));
         file_put_contents($logFile, "Pet URL: $petUrl\n", FILE_APPEND);
 
-        // Generate QR code inline
+        // Generate QR code. Prefer PNG (GD) when available, otherwise fall
+        // back to SVG so the QR still renders on environments without ext-gd.
+        $gdAvailable = extension_loaded('gd') || function_exists('imagecreatetruecolor');
+
+        if ($gdAvailable) {
+            $options = new \chillerlan\QRCode\QROptions([
+                'version'      => 5,
+                'outputType'   => \chillerlan\QRCode\QRCode::OUTPUT_IMAGE_PNG,
+                'eccLevel'     => \chillerlan\QRCode\QRCode::ECC_L,
+                'scale'        => 10,
+                'imageBase64'  => false,
+            ]);
+
+            $qrcode = new \chillerlan\QRCode\QRCode($options);
+            $qrData = $qrcode->render($petUrl);
+
+            file_put_contents($logFile, "QR generated (PNG): " . strlen($qrData) . " bytes\n", FILE_APPEND);
+
+            header('Content-Type: image/png');
+            header('Content-Length: ' . strlen($qrData));
+            header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+            header('Pragma: no-cache');
+            echo $qrData;
+            exit();
+        }
+
+        // Fallback to SVG markup (does not require GD)
         $options = new \chillerlan\QRCode\QROptions([
             'version'      => 5,
-            'outputType'   => \chillerlan\QRCode\QRCode::OUTPUT_IMAGE_PNG,
+            'outputType'   => \chillerlan\QRCode\QRCode::OUTPUT_MARKUP_SVG,
             'eccLevel'     => \chillerlan\QRCode\QRCode::ECC_L,
-            'scale'        => 10,
+            'scale'        => 4,
             'imageBase64'  => false,
         ]);
 
         $qrcode = new \chillerlan\QRCode\QRCode($options);
-        $qrData = $qrcode->render($petUrl);
-        
-        file_put_contents($logFile, "QR generated: " . strlen($qrData) . " bytes\n", FILE_APPEND);
-        
-        // Output directly
-        header('Content-Type: image/png');
-        header('Content-Length: ' . strlen($qrData));
+        $svg = $qrcode->render($petUrl);
+        file_put_contents($logFile, "QR generated (SVG): " . strlen($svg) . " bytes\n", FILE_APPEND);
+
+        header('Content-Type: image/svg+xml');
         header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
         header('Pragma: no-cache');
-        
-        echo $qrData;
+        echo $svg;
         exit();
 
     } catch (\Throwable $e) {
@@ -399,24 +421,46 @@ public function downloadQr($id)
         // Generate URL to pet view page
         $petUrl = site_url("pets/view/" . intval($id));
 
-        // Generate QR code
+        // Generate QR code for download. Prefer PNG (GD) when available,
+        // otherwise provide an SVG download.
+        $gdAvailable = extension_loaded('gd') || function_exists('imagecreatetruecolor');
+
+        if ($gdAvailable) {
+            $options = new \chillerlan\QRCode\QROptions([
+                'version'      => 5,
+                'outputType'   => \chillerlan\QRCode\QRCode::OUTPUT_IMAGE_PNG,
+                'eccLevel'     => \chillerlan\QRCode\QRCode::ECC_L,
+                'scale'        => 10,
+                'imageBase64'  => false,
+            ]);
+
+            $qrcode = new \chillerlan\QRCode\QRCode($options);
+
+            header('Content-Type: image/png');
+            header('Content-Disposition: attachment; filename="pet_' . $id . '_qr.png"');
+            header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+            header('Pragma: no-cache');
+            echo $qrcode->render($petUrl);
+            exit();
+        }
+
+        // Fallback: SVG download
         $options = new \chillerlan\QRCode\QROptions([
             'version'      => 5,
-            'outputType'   => \chillerlan\QRCode\QRCode::OUTPUT_IMAGE_PNG,
+            'outputType'   => \chillerlan\QRCode\QRCode::OUTPUT_MARKUP_SVG,
             'eccLevel'     => \chillerlan\QRCode\QRCode::ECC_L,
-            'scale'        => 10,
+            'scale'        => 4,
             'imageBase64'  => false,
         ]);
 
         $qrcode = new \chillerlan\QRCode\QRCode($options);
-        
-        // Output as download
-        header('Content-Type: image/png');
-        header('Content-Disposition: attachment; filename="pet_' . $id . '_qr.png"');
+        $svg = $qrcode->render($petUrl);
+
+        header('Content-Type: image/svg+xml');
+        header('Content-Disposition: attachment; filename="pet_' . $id . '_qr.svg"');
         header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
         header('Pragma: no-cache');
-        
-        echo $qrcode->render($petUrl);
+        echo $svg;
         exit();
 
     } catch (\Throwable $e) {
