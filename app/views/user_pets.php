@@ -744,6 +744,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!resp.ok) throw new Error('QR fetch failed: ' + resp.status);
       return resp.blob();
     }).then(blob => {
+      // ensure we actually received an image (not an HTML error page)
+      const type = blob.type || '';
+      if (!(type.startsWith('image/') || type === 'image/svg+xml')) {
+        throw new Error('Invalid blob type: ' + type);
+      }
+
       // create object URL and set as src
       const objectUrl = URL.createObjectURL(blob);
       img.src = objectUrl;
@@ -751,7 +757,17 @@ document.addEventListener('DOMContentLoaded', function () {
       img.onload = () => { URL.revokeObjectURL(objectUrl); };
     }).catch(err => {
       console.error('QR load failed for', url, err);
-      // keep existing onerror placeholder
+
+      // Attempt a robust client-side fallback using a public QR image API.
+      // Replace '/pets/qr/' with '/pets/view/' to get the target URL encoded
+      // into the QR code. This avoids relying on the server QR endpoint.
+      try {
+        const petViewUrl = url.replace('/pets/qr/', '/pets/view/');
+        const fallback = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(petViewUrl);
+        img.src = fallback;
+      } catch (e) {
+        // keep existing onerror placeholder if even fallback fails
+      }
     });
   });
 });
