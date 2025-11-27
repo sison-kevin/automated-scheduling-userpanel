@@ -1,9 +1,10 @@
 <?php
 header('Content-Type: text/plain; charset=utf-8');
 
-$helper = __DIR__ . '/../app/helpers/mailersend_smtp.php';
+// Use the centralized email helper which prefers API, then SMTP, then PHPMailer
+$helper = __DIR__ . '/../app/helpers/email_helper.php';
 if (! file_exists($helper)) {
-    echo "mailersend_smtp helper not found at $helper\n";
+    echo "email_helper not found at $helper\n";
     exit(1);
 }
 require_once $helper;
@@ -16,16 +17,17 @@ if (! $to) {
 
 echo "Recipient: $to\n";
 echo "Using environment (Apache) values:\n";
+echo "MAILERSEND_API_KEY: " . (getenv('MAILERSEND_API_KEY') ? '(present)' : '(not set)') . "\n";
 echo "MAILERSEND_SMTP_USER: " . (getenv('MAILERSEND_SMTP_USER') ?: '(not set)') . "\n";
 echo "EMAIL_FROM: " . (getenv('EMAIL_FROM') ?: '(not set)') . "\n";
 
 $code = bin2hex(random_bytes(3));
 echo "Verification code: $code\n";
 
-echo "Calling sendVerificationEmailMailerSend()...\n";
+echo "Calling sendVerificationEmail()...\n";
 $ok = false;
 try {
-    $ok = sendVerificationEmailMailerSend($to, $code);
+    $ok = sendVerificationEmail($to, $code);
 } catch (Throwable $e) {
     echo "Exception thrown: " . $e->getMessage() . "\n";
 }
@@ -33,7 +35,7 @@ try {
 if ($ok) {
     echo "Result: SUCCESS\n";
 } else {
-    echo "Result: FAILURE - check Apache error log: C:\\xampp\\apache\\logs\\error.log\n";
+    echo "Result: FAILURE - check server logs for details\n";
 }
 
 echo "Done.\n";

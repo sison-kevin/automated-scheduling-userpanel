@@ -54,6 +54,20 @@ function sendVerificationEmailMailerSend($to, $verificationCode)
     $fp = @stream_socket_client($socketAddress, $errno, $errstr, 30);
     if (! $fp) {
         error_log("[mailersend_smtp] Unable to connect to SMTP {$socketAddress}: {$errno} {$errstr}");
+        // If MAILERSEND_API_KEY is available, try the HTTP API as a fallback
+        $apiKey = getenv('MAILERSEND_API_KEY');
+        if ($apiKey) {
+            $api = __DIR__ . '/mailersend_api.php';
+            if (file_exists($api)) {
+                require_once $api;
+                if (function_exists('sendVerificationEmailMailerSendAPI')) {
+                    error_log('[mailersend_smtp] Falling back to MailerSend HTTP API due to SMTP connect failure');
+                    return sendVerificationEmailMailerSendAPI($to, $verificationCode);
+                }
+            } else {
+                error_log('[mailersend_smtp] MailerSend API helper not found at ' . $api);
+            }
+        }
         return false;
     }
 
