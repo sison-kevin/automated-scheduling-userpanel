@@ -47,24 +47,35 @@ class AuthController extends Controller
         $code = rand(100000, 999999);
 
         // Insert user
-        $this->userModel->insertUser([
+        // Insert user and mark as verified so they can login immediately
+        $newId = $this->userModel->insertUser([
             'name' => $name,
             'email' => $email,
             'password' => $password,
             'verification_code' => $code,
-            'is_verified' => 0
+            'is_verified' => 1
         ]);
 
-        // Send verification email
-        if (sendVerificationEmail($email, $code)) {
-            $_SESSION['success'] = 'Registration successful! Please check your email to verify your account.';
-            $this->call->view('verify', ['email' => $email]);
-        } else {
-            $_SESSION['error'] = 'Registration successful but failed to send email. Contact support.';
-            $_SESSION['form_type'] = 'register';
-            header('Location: ' . site_url('/'));
+        // Attempt to send verification email (optional) but do not block login on failure
+        if (!sendVerificationEmail($email, $code)) {
+            // Log or set a non-blocking message
+            $_SESSION['notice'] = 'Registered but verification email failed to send.';
+        }
+
+        // Auto-login the newly registered user
+        if ($newId) {
+            $_SESSION['user_id'] = $newId;
+            $_SESSION['user_name'] = $name;
+            $_SESSION['user_email'] = $email;
+            header('Location: ' . site_url('landing'));
             exit;
         }
+
+        // Fallback: if insert failed
+        $_SESSION['error'] = 'Registration failed. Please try again.';
+        $_SESSION['form_type'] = 'register';
+        header('Location: ' . site_url('/'));
+        exit;
     }
 
     // Email verification
