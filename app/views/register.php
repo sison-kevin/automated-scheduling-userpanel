@@ -566,6 +566,25 @@ footer p {
   border: 1px solid #e6e6e6;
   border-radius: 6px;
 }
+
+/* Password toggle */
+.password-wrapper { position: relative; }
+.password-wrapper input { padding-right: 44px; }
+.toggle-password {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle-password svg { width: 20px; height: 20px; fill: #888; }
+.toggle-password.shown svg { fill: #ff914d; }
 .form-container button[type="submit"] {
   width: 100%;
   padding: 10px;
@@ -836,7 +855,13 @@ $recaptcha_site_key = get_recaptcha_site_key();
   <form method="POST" action="<?= site_url('register') ?>">
     <input type="text" name="name" placeholder="Name" required><br>
     <input type="email" name="email" placeholder="Email" required><br>
-    <input type="password" name="password" placeholder="Password" required><br>
+    <div class="password-wrapper">
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="button" class="toggle-password" aria-label="Show password">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10z"/></svg>
+      </button>
+    </div>
+    <br>
     <?php if ($recaptcha_site_key): ?>
       <div style="margin:8px 0;" class="g-recaptcha" data-sitekey="<?= htmlspecialchars($recaptcha_site_key) ?>"></div>
     <?php endif; ?>
@@ -863,7 +888,13 @@ $recaptcha_site_key = get_recaptcha_site_key();
   
   <form method="POST" action="<?= site_url('login') ?>">
     <input type="email" name="email" placeholder="Email" required><br>
-    <input type="password" name="password" placeholder="Password" required><br>
+    <div class="password-wrapper">
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="button" class="toggle-password" aria-label="Show password">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10z"/></svg>
+      </button>
+    </div>
+    <br>
     <?php if ($recaptcha_site_key): ?>
       <div style="margin:8px 0;" class="g-recaptcha" data-sitekey="<?= htmlspecialchars($recaptcha_site_key) ?>"></div>
     <?php endif; ?>
@@ -960,6 +991,30 @@ window.addEventListener('DOMContentLoaded', () => {
 <?php if ($recaptcha_site_key): ?>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <?php endif; ?>
+
+<script>
+// Password show/hide toggle
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.toggle-password').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      var wrapper = e.currentTarget.closest('.password-wrapper');
+      if (!wrapper) return;
+      var input = wrapper.querySelector('input');
+      if (!input) return;
+      if (input.type === 'password') {
+        input.type = 'text';
+        e.currentTarget.classList.add('shown');
+        // change icon to eye-slash
+        e.currentTarget.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M1.39 4.22l2.27 2.27C2.5 8.06 1 10.43 1 12c0 0 4 7 11 7 1.95 0 3.78-.42 5.41-1.16l2.3 2.3 1.41-1.41L2.8 2.81 1.39 4.22zM7.53 9.06l1.54 1.54A3 3 0 0 0 12 15a3 3 0 0 0 2.4-4.68l1.47 1.47C15.28 13.26 13.74 14 12 14c-3.87 0-7-4.5-7-4.5.03-.36.24-.9.53-1.44l2.0 0zM12 5c7 0 11 7 11 7-.7 1.23-2.03 3.06-3.6 4.37l1.45 1.45C22.3 16.03 24 14 24 12c0 0-4-7-12-7-1.85 0-3.6.36-5.2 1.02l1.18 1.18C9.78 6.37 10.86 6 12 6z"/></svg>';
+      } else {
+        input.type = 'password';
+        e.currentTarget.classList.remove('shown');
+        e.currentTarget.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10z"/></svg>';
+      }
+    });
+  });
+});
+</script>
 
 </body>
 </html>
